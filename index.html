@@ -46,6 +46,19 @@
       max-width: 200px;
       margin-bottom: 10px;
     }
+
+    .delete-button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+
+    .delete-button:hover {
+      background-color: #d32f2f;
+    }
   </style>
 </head>
 <body>
@@ -95,7 +108,21 @@
       reader.onload = function(event) {
         var imgElement = document.createElement('img');
         imgElement.src = event.target.result;
-        document.getElementById('uploadedPhotos').appendChild(imgElement);
+
+        var deleteButton = document.createElement('button');
+        deleteButton.className = 'delete-button';
+        deleteButton.textContent = 'Delete';
+
+        var photoContainer = document.createElement('div');
+        photoContainer.appendChild(imgElement);
+        photoContainer.appendChild(deleteButton);
+
+        document.getElementById('uploadedPhotos').appendChild(photoContainer);
+
+        // Add event listener to the delete button
+        deleteButton.addEventListener('click', function() {
+          photoContainer.remove();
+        });
       };
 
       // Simulate upload process (replace with your actual implementation)
