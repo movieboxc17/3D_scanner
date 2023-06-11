@@ -37,6 +37,15 @@
     .error-message {
       color: red;
     }
+
+    .uploaded-photos {
+      margin-top: 20px;
+    }
+
+    .uploaded-photos img {
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -48,6 +57,10 @@
       <button type="submit">Upload</button>
     </form>
     <p id="errorMessage" class="error-message"></p>
+  </div>
+
+  <div class="uploaded-photos" id="uploadedPhotos">
+    <!-- Uploaded photos will be displayed here -->
   </div>
 
   <script>
@@ -72,6 +85,18 @@
 
       // All validations passed, proceed with upload
       document.getElementById('errorMessage').textContent = '';
+
+      var reader = new FileReader();
+
+      // Read the image file as a data URL
+      reader.readAsDataURL(file);
+
+      // Handle the image file load event
+      reader.onload = function(event) {
+        var imgElement = document.createElement('img');
+        imgElement.src = event.target.result;
+        document.getElementById('uploadedPhotos').appendChild(imgElement);
+      };
 
       // Simulate upload process (replace with your actual implementation)
       setTimeout(function() {
