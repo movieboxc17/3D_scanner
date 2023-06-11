@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iPhone 3S Simulator</title>
+    <style>
+        /* CSS for iPhone frame */
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #iphone {
+            width: 320px;
+            height: 480px;
+            background-color: #aaa;
+            border: 1px solid #888;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* CSS for iPhone screen */
+        #iphone .screen {
+            width: 300px;
+            height: 440px;
+            background-color: #fff;
+            margin: 20px;
+            border: 1px solid #888;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* CSS for iPhone buttons */
+        #iphone .button {
+            width: 50px;
+            height: 50px;
+            background-color: #bbb;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 10px;
+        }
+        
+        #iphone .home-button {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        #iphone .power-button {
+            right: 10px;
+        }
+        
+        /* CSS for iPhone button labels */
+        #iphone .button::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="iphone">
+        <div class="screen"></div>
+        <div class="button home-button"></div>
+        <div class="button power-button"></div>
+    </div>
 
+    <script>
+        // JavaScript for button interactions
+        const homeButton = document.querySelector('.home-button');
+        const powerButton = document.querySelector('.power-button');
+        const screen = document.querySelector('.screen');
+        
+        homeButton.addEventListener('click', () => {
+            screen.innerHTML = 'Home button pressed!';
+        });
+        
+        powerButton.addEventListener('click', () => {
+            screen.innerHTML = 'Power button pressed!';
+        });
+    </script>
+</body>
+</html>
