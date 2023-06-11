@@ -20,13 +20,14 @@
             border-radius: 10px;
             overflow: hidden;
             position: relative;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
         
         /* CSS for iPhone screen */
         #iphone .screen {
-            width: 300px;
-            height: 440px;
-            background-color: #fff;
+            width: 290px;
+            height: 430px;
+            background-color: #000;
             margin: 20px;
             border: 1px solid #888;
             border-radius: 5px;
@@ -36,12 +37,13 @@
         
         /* CSS for iPhone buttons */
         #iphone .button {
-            width: 50px;
-            height: 50px;
-            background-color: #bbb;
+            width: 30px;
+            height: 30px;
+            background-color: #333;
             border-radius: 50%;
             position: absolute;
-            bottom: 10px;
+            bottom: 15px;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
         }
         
         #iphone .home-button {
@@ -50,26 +52,152 @@
         }
         
         #iphone .power-button {
-            right: 10px;
+            right: 15px;
         }
         
         /* CSS for iPhone button labels */
         #iphone .button::after {
             content: '';
             display: block;
-            width: 20px;
+            width: 60%;
             height: 2px;
-            background-color: #000;
+            background-color: #fff;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
+        
+        /* CSS for iPhone status bar */
+        #iphone .status-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        #iphone .status-bar::before {
+            content: 'iPhone 3S';
+            color: #fff;
+            font-size: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* CSS for iPhone app icons */
+        #iphone .app-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            height: 400px;
+        }
+        
+        #iphone .app-icon {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #iphone .app-icon img {
+            width: 80%;
+            height: 80%;
+        }
+        
+        /* CSS for iPhone app labels */
+        #iphone .app-labels {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            height: 60px;
+        }
+        
+        #iphone .app-label {
+            width: 50px;
+            font-size: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        /* CSS for iPhone dock */
+        #iphone .dock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            background-color: #222;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        
+        #iphone .dock-icon {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #iphone .dock-icon img {
+            width: 80%;
+            height: 80%;
+        }
+        
+        /* CSS for iPhone dock labels */
+        #iphone .dock-label {
+            width: 50px;
+            font-size: 10px;
+            text-align: center;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
     <div id="iphone">
-        <div class="screen"></div>
+        <div class="status-bar"></div>
+        <div class="screen">
+            <div class="app-icons">
+                <div class="app-icon"><img src="app1.png" alt="App 1"></div>
+                <div class="app-icon"><img src="app2.png" alt="App 2"></div>
+                <div class="app-icon"><img src="app3.png" alt="App 3"></div>
+                <div class="app-icon"><img src="app4.png" alt="App 4"></div>
+                <div class="app-icon"><img src="app5.png" alt="App 5"></div>
+                <div class="app-icon"><img src="app6.png" alt="App 6"></div>
+            </div>
+            <div class="app-labels">
+                <div class="app-label">App 1</div>
+                <div class="app-label">App 2</div>
+                <div class="app-label">App 3</div>
+                <div class="app-label">App 4</div>
+                <div class="app-label">App 5</div>
+                <div class="app-label">App 6</div>
+            </div>
+        </div>
+        <div class="dock">
+            <div class="dock-icon"><img src="app1.png" alt="App 1"></div>
+            <div class="dock-icon"><img src="app2.png" alt="App 2"></div>
+            <div class="dock-icon"><img src="app3.png" alt="App 3"></div>
+            <div class="dock-icon"><img src="app4.png" alt="App 4"></div>
+            <div class="dock-icon"><img src="app5.png" alt="App 5"></div>
+            <div class="dock-icon"><img src="app6.png" alt="App 6"></div>
+        </div>
         <div class="button home-button"></div>
         <div class="button power-button"></div>
     </div>
